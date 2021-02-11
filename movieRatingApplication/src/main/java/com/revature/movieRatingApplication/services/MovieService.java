@@ -1,6 +1,7 @@
 package com.revature.movieRatingApplication.services;
 
 import com.revature.movieRatingApplication.exceptions.BadRequestException;
+import com.revature.movieRatingApplication.exceptions.ResourceNotFoundException;
 import com.revature.movieRatingApplication.exceptions.ResourcePersistenceException;
 import com.revature.movieRatingApplication.models.Movie;
 import com.revature.movieRatingApplication.repos.MovieRepo;
@@ -38,5 +39,16 @@ public class MovieService {
 
     public List<Movie> getAllMovies() {
         return (List<Movie>) movieRepo.findAll();
+    }
+
+    public Movie getMovieById(Integer id) {
+        if (id <= 0) {
+            throw new BadRequestException("Id cannot be less than or equal to zero!");
+        }
+        Optional<Movie> movie = movieRepo.findMovieById(id);
+        if (!movie.isPresent()){
+            throw new ResourceNotFoundException("No Movie found with Id: " + id);
+        }
+        return movie.get();
     }
 }
