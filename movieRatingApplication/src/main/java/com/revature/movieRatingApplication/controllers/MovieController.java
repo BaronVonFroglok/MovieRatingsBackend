@@ -1,11 +1,11 @@
 package com.revature.movieRatingApplication.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import com.revature.movieRatingApplication.models.Movie;
 import com.revature.movieRatingApplication.services.MovieService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/movie")
@@ -17,5 +17,10 @@ public class MovieController {
     @Autowired
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
+    }
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Movie addNewMovie(@RequestBody Movie newMovie){
+        return movieService.addNewMovie(newMovie);
     }
 }
