@@ -11,4 +11,8 @@ import java.util.Optional;
 public interface MovieRepo extends CrudRepository<Movie, Integer> {
 
     Optional<Movie> findMovieByImbdId(String ImbdId);
+
+    Optional<Movie> findMovieById(Integer id);
+
+    Optional<Movie> findMovieByTitle(String title);
 }
