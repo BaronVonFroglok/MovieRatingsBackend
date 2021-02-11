@@ -38,4 +38,9 @@ public class MovieController {
 
         return movieService.getMovieById(id);
     }
+
+    @GetMapping(value = "/name", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Movie getMovieByName(@RequestParam String title){
+        return movieService.getMovieByTitle(title);
+    }
 }

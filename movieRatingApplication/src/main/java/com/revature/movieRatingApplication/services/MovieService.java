@@ -9,6 +9,7 @@ import com.revature.movieRatingApplication.repos.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,6 +49,17 @@ public class MovieService {
         Optional<Movie> movie = movieRepo.findMovieById(id);
         if (!movie.isPresent()){
             throw new ResourceNotFoundException("No Movie found with Id: " + id);
+        }
+        return movie.get();
+    }
+
+    public Movie getMovieByTitle(String title) {
+        if (title == null || title.trim().equals("")){
+            throw new BadRequestException("Movie title must not be null or empty!");
+        }
+        Optional<Movie> movie = movieRepo.findMovieByTitle(title);
+        if (!movie.isPresent()){
+            throw new ResourceNotFoundException("No Movie found with Name: " + title);
         }
         return movie.get();
     }
