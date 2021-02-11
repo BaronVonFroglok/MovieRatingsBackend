@@ -1,7 +1,8 @@
-package com.revature.services;
+package com.revature.movieRatingApplication.services;
 
-import com.revature.models.Movie;
-import com.revature.repos.MovieRepo;
+import com.revature.movieRatingApplication.models.Movie;
+import com.revature.movieRatingApplication.repos.MovieRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

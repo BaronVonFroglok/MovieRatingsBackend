@@ -1,4 +1,4 @@
-package com.revature.models;
+package com.revature.movieRatingApplication.models;
 
 import javax.persistence.*;
 import java.util.Objects;

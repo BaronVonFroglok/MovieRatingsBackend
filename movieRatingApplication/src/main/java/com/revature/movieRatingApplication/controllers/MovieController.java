@@ -1,10 +1,11 @@
-package com.revature.controllers;
+package com.revature.movieRatingApplication.controllers;
 
-import com.revature.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.revature.movieRatingApplication.services.MovieService;
 
 @RestController
 @RequestMapping("/movie")
