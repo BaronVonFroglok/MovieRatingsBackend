@@ -1,4 +1,4 @@
-package com.revature.exceptions;
+package com.revature.movieRatingApplication.exceptions;
 
 public class ResourcePersistenceException extends RuntimeException{
 

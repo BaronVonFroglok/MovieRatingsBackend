@@ -1,8 +1,9 @@
-package com.revature.repos;
+package com.revature.movieRatingApplication.repos;
 
-import com.revature.models.Movie;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.revature.movieRatingApplication.models.Movie;
 
 import java.util.Optional;
 

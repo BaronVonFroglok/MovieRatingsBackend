@@ -1,7 +1,8 @@
-package com.revature.controllers;
+package com.revature.movieRatingApplication.controllers;
 
-import com.revature.models.Movie;
-import com.revature.services.MovieService;
+import com.revature.movieRatingApplication.models.Movie;
+import com.revature.movieRatingApplication.services.MovieService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

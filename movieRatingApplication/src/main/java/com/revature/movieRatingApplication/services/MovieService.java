@@ -1,9 +1,10 @@
-package com.revature.services;
+package com.revature.movieRatingApplication.services;
 
-import com.revature.exceptions.BadRequestException;
-import com.revature.exceptions.ResourcePersistenceException;
-import com.revature.models.Movie;
-import com.revature.repos.MovieRepo;
+import com.revature.movieRatingApplication.exceptions.BadRequestException;
+import com.revature.movieRatingApplication.exceptions.ResourcePersistenceException;
+import com.revature.movieRatingApplication.models.Movie;
+import com.revature.movieRatingApplication.repos.MovieRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
