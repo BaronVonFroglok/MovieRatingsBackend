@@ -8,6 +8,7 @@ import com.revature.movieRatingApplication.repos.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,5 +34,9 @@ public class MovieService {
             throw  new ResourcePersistenceException("The Movie: " + newMovie.getTitle() + " already exists in our database!");
         }
         return movieRepo.save(newMovie);
+    }
+
+    public List<Movie> getAllMovies() {
+        return (List<Movie>) movieRepo.findAll();
     }
 }
